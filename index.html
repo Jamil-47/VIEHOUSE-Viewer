@@ -729,11 +729,12 @@
         // Load LCC object with loading progress
         updateLoadingProgress(10, "Initializing 3D Renderer...");
 
+        const DATA_URL = "https://7cljve8li97skpij.public.blob.vercel-storage.com/LegoPanda/meta.lcc";
         const lccObj = LCCRender.load(
             {
                 camera,
                 scene,
-                dataPath: "http://localhost:5501/data/PentHouse",
+                dataPath: DATA_URL,           // <-- file, not folder
                 renderLib: THREE,
                 canvas: renderer.domElement,
                 renderer,
