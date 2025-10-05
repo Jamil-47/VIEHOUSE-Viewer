@@ -999,15 +999,26 @@
 
             if (keysPressed["w"] || keysPressed["arrowup"]) vMove.add(vForward);
             if (keysPressed["s"] || keysPressed["arrowdown"]) vMove.sub(vForward);
-            if (keysPressed["a"] || keysPressed["arrowright"]) vMove.add(vRight);
-            if (keysPressed["d"] || keysPressed["arrowleft"]) vMove.sub(vRight);
+            if (keysPressed["a"] || keysPressed["arrowleft"]) vMove.sub(vRight);  // Fixed: was add(vRight)
+            if (keysPressed["d"] || keysPressed["arrowright"]) vMove.add(vRight); // Fixed: was sub(vRight)
             if (keysPressed["q"]) vMove.z += 1;
             if (keysPressed["e"]) vMove.z -= 1;
 
-            // Joystick movement (mobile)
+            // Joystick movement (mobile) - FIXED DIRECTION MAPPING
             if (joystickState.active) {
-                vMove.x += joystickState.x * speed;
-                vMove.y += joystickState.y * speed;
+                // Forward/backward (joystick Y axis)
+                if (joystickState.y > 0) {
+                    vMove.add(vForward.clone().multiplyScalar(joystickState.y));
+                } else if (joystickState.y < 0) {
+                    vMove.sub(vForward.clone().multiplyScalar(-joystickState.y));
+                }
+
+                // Left/right (joystick X axis)
+                if (joystickState.x > 0) {
+                    vMove.add(vRight.clone().multiplyScalar(joystickState.x));
+                } else if (joystickState.x < 0) {
+                    vMove.sub(vRight.clone().multiplyScalar(-joystickState.x));
+                }
             }
 
             if (vMove.lengthSq() > 0) {
