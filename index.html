@@ -490,7 +490,7 @@
 
     <div id="ui-container" aria-hidden="true" data-testid="controls-panel">
         <div class="ui-section">
-            <div class="section-title">🎮 NAVIGATION CONTROLS</div>
+            <div class="section-title"> NAVIGATION CONTROLS</div>
             <div class="control-item desktop-only">
                 <div class="control-key">LEFT CLICK</div>
                 <div class="control-label">360° Camera Rotation</div>
@@ -526,7 +526,7 @@
         </div>
 
         <div class="ui-section">
-            <div class="section-title">🚀 MOVEMENT</div>
+            <div class="section-title"> MOVEMENT</div>
             <div class="control-item">
                 <div class="control-key">W / ↑</div>
                 <div class="control-label">Move Forward</div>
@@ -558,7 +558,7 @@
         </div>
 
         <div class="ui-section">
-            <div class="section-title">🎯 QUICK CONTROLS</div>
+            <div class="section-title"> QUICK CONTROLS</div>
             <div class="control-cards">
                 <div class="control-card">
                     <div class="control-icon">👁️</div>
@@ -729,7 +729,7 @@
         // Load LCC object with loading progress
         updateLoadingProgress(10, "Initializing 3D Renderer...");
 
-        const DATA_URL = "https://7cljve8li97skpij.public.blob.vercel-storage.com/LegoPanda/meta.lcc";
+        const DATA_URL = "https://7cljve8li97skpij.public.blob.vercel-storage.com/PentHouse/meta.lcc";
         const lccObj = LCCRender.load(
             {
                 camera,
@@ -768,7 +768,7 @@
                     lccObj.setMaxSplats(1e6); // Reduce from 5M to 1M for mobile
                     updateLoadingProgress(95, "Optimizing for mobile...");
                 } else {
-                    lccObj.setMaxSplats(5e6); // Original value for desktop
+                    lccObj.setMaxSplats(4e6); // Original value for desktop
                 }
             }
         }, 100);
