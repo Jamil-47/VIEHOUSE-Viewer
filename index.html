@@ -999,8 +999,8 @@
 
             if (keysPressed["w"] || keysPressed["arrowup"]) vMove.add(vForward);
             if (keysPressed["s"] || keysPressed["arrowdown"]) vMove.sub(vForward);
-            if (keysPressed["a"] || keysPressed["arrowleft"]) vMove.sub(vRight);  // Fixed: was add(vRight)
-            if (keysPressed["d"] || keysPressed["arrowright"]) vMove.add(vRight); // Fixed: was sub(vRight)
+            if (keysPressed["d"] || keysPressed["arrowleft"]) vMove.sub(vRight);  // Fixed: was add(vRight)
+            if (keysPressed["a"] || keysPressed["arrowright"]) vMove.add(vRight); // Fixed: was sub(vRight)
             if (keysPressed["q"]) vMove.z += 1;
             if (keysPressed["e"]) vMove.z -= 1;
 
